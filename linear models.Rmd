@@ -121,5 +121,12 @@ logistic_fit =
   exepensive_apt ~ stars + borough, 
   data = nyc_airbnb,
   family = binomial())
+
+logistic_fit %>% 
+  broom::tidy() %>% 
+  mutate( 
+    term = str_replace(term, "borough", "Borough: "),
+    
+    )
 ```
 
